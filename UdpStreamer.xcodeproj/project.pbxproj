@@ -15,6 +15,7 @@
 		841B9D661F592B3F00EFA6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B9D641F592B3F00EFA6FF /* LaunchScreen.storyboard */; };
 		841B9D721F59373B00EFA6FF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9D711F59373B00EFA6FF /* Config.swift */; };
 		84D57E831F59507100BB6CCB /* UDPSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D57E821F59507100BB6CCB /* UDPSocket.swift */; };
+		84D57E861F595F9A00BB6CCB /* AVStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D57E851F595F9A00BB6CCB /* AVStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		841B9D671F592B3F00EFA6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		841B9D711F59373B00EFA6FF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		84D57E821F59507100BB6CCB /* UDPSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPSocket.swift; sourceTree = "<group>"; };
+		84D57E851F595F9A00BB6CCB /* AVStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVStream.swift; sourceTree = "<group>"; };
 		CECFAE5A7B5F8C7773069209 /* Pods_UdpStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UdpStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CF202ABFF97EE121AD3ECB /* Pods-UdpStreamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UdpStreamer.release.xcconfig"; path = "Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +66,7 @@
 		841B9D4F1F592B3F00EFA6FF = {
 			isa = PBXGroup;
 			children = (
+				84D57E841F595B9A00BB6CCB /* Managers */,
 				841B9D5A1F592B3F00EFA6FF /* UdpStreamer */,
 				841B9D591F592B3F00EFA6FF /* Products */,
 				11A8BD65F20C016BAB335A98 /* Pods */,
@@ -82,7 +85,6 @@
 		841B9D5A1F592B3F00EFA6FF /* UdpStreamer */ = {
 			isa = PBXGroup;
 			children = (
-				84D57E821F59507100BB6CCB /* UDPSocket.swift */,
 				841B9D711F59373B00EFA6FF /* Config.swift */,
 				841B9D5B1F592B3F00EFA6FF /* AppDelegate.swift */,
 				841B9D5D1F592B3F00EFA6FF /* ViewController.swift */,
@@ -92,6 +94,15 @@
 				841B9D671F592B3F00EFA6FF /* Info.plist */,
 			);
 			path = UdpStreamer;
+			sourceTree = "<group>";
+		};
+		84D57E841F595B9A00BB6CCB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84D57E821F59507100BB6CCB /* UDPSocket.swift */,
+				84D57E851F595F9A00BB6CCB /* AVStream.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D57E861F595F9A00BB6CCB /* AVStream.swift in Sources */,
 				84D57E831F59507100BB6CCB /* UDPSocket.swift in Sources */,
 				841B9D721F59373B00EFA6FF /* Config.swift in Sources */,
 				841B9D5E1F592B3F00EFA6FF /* ViewController.swift in Sources */,

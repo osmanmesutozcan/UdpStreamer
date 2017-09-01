@@ -8,6 +8,7 @@
 
 import CocoaAsyncSocket
 
+
 class UDPSocket: NSObject {
     static let manager = UDPSocket()
     var _socket: GCDAsyncUdpSocket?
@@ -28,8 +29,8 @@ class UDPSocket: NSObject {
         }
     }
 
-    func send(_ data: Data, toHost host: String, port: UInt16) {
-        self._socket?.send(data, toHost: host, port: port, withTimeout: -1, tag: 0)
+    func send(_ data: Data) {
+        self._socket?.send(data, toHost: Config.Server.addr, port: Config.Server.port, withTimeout: -1, tag: 0)
     }
 }
 

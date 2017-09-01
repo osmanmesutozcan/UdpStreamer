@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 import CocoaAsyncSocket
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVStreamDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         UDPSocket.manager.prepare()
+        AVStream.manager.prepare()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -24,6 +26,6 @@ class ViewController: UIViewController {
 
     @IBAction func sendPacket(_ sender: Any) {
         let data = "Hello from UDPStreamer!\n".data(using: .utf8)
-        UDPSocket.manager.send(data!, toHost: Config.Server.addr, port: Config.Server.port)
+        UDPSocket.manager.send(data!)
     }
 }
