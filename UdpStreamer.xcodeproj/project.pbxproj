@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26F3843D721358FF5771EF5E /* Pods_UdpStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECFAE5A7B5F8C7773069209 /* Pods_UdpStreamer.framework */; };
 		841B9D5C1F592B3F00EFA6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9D5B1F592B3F00EFA6FF /* AppDelegate.swift */; };
 		841B9D5E1F592B3F00EFA6FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9D5D1F592B3F00EFA6FF /* ViewController.swift */; };
 		841B9D611F592B3F00EFA6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B9D5F1F592B3F00EFA6FF /* Main.storyboard */; };
 		841B9D631F592B3F00EFA6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841B9D621F592B3F00EFA6FF /* Assets.xcassets */; };
 		841B9D661F592B3F00EFA6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B9D641F592B3F00EFA6FF /* LaunchScreen.storyboard */; };
+		841B9D721F59373B00EFA6FF /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B9D711F59373B00EFA6FF /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41B5B467E6A0B1E880C8869F /* Pods-UdpStreamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UdpStreamer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer.debug.xcconfig"; sourceTree = "<group>"; };
 		841B9D581F592B3F00EFA6FF /* UdpStreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UdpStreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841B9D5B1F592B3F00EFA6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841B9D5D1F592B3F00EFA6FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		841B9D621F592B3F00EFA6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841B9D651F592B3F00EFA6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841B9D671F592B3F00EFA6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841B9D711F59373B00EFA6FF /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CECFAE5A7B5F8C7773069209 /* Pods_UdpStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UdpStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2CF202ABFF97EE121AD3ECB /* Pods-UdpStreamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UdpStreamer.release.xcconfig"; path = "Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F3843D721358FF5771EF5E /* Pods_UdpStreamer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A8BD65F20C016BAB335A98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41B5B467E6A0B1E880C8869F /* Pods-UdpStreamer.debug.xcconfig */,
+				D2CF202ABFF97EE121AD3ECB /* Pods-UdpStreamer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		60B8860A7F9154F8A743A8F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CECFAE5A7B5F8C7773069209 /* Pods_UdpStreamer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		841B9D4F1F592B3F00EFA6FF = {
 			isa = PBXGroup;
 			children = (
 				841B9D5A1F592B3F00EFA6FF /* UdpStreamer */,
 				841B9D591F592B3F00EFA6FF /* Products */,
+				11A8BD65F20C016BAB335A98 /* Pods */,
+				60B8860A7F9154F8A743A8F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +80,7 @@
 		841B9D5A1F592B3F00EFA6FF /* UdpStreamer */ = {
 			isa = PBXGroup;
 			children = (
+				841B9D711F59373B00EFA6FF /* Config.swift */,
 				841B9D5B1F592B3F00EFA6FF /* AppDelegate.swift */,
 				841B9D5D1F592B3F00EFA6FF /* ViewController.swift */,
 				841B9D5F1F592B3F00EFA6FF /* Main.storyboard */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 841B9D6A1F592B3F00EFA6FF /* Build configuration list for PBXNativeTarget "UdpStreamer" */;
 			buildPhases = (
+				BEBE41085CA5E715C4F6940C /* [CP] Check Pods Manifest.lock */,
 				841B9D541F592B3F00EFA6FF /* Sources */,
 				841B9D551F592B3F00EFA6FF /* Frameworks */,
 				841B9D561F592B3F00EFA6FF /* Resources */,
+				EFD4F7ECBB6485FBE8033E6A /* [CP] Embed Pods Frameworks */,
+				6272202838019545F6FD033C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +160,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6272202838019545F6FD033C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEBE41085CA5E715C4F6940C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UdpStreamer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFD4F7ECBB6485FBE8033E6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UdpStreamer/Pods-UdpStreamer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		841B9D541F592B3F00EFA6FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841B9D721F59373B00EFA6FF /* Config.swift in Sources */,
 				841B9D5E1F592B3F00EFA6FF /* ViewController.swift in Sources */,
 				841B9D5C1F592B3F00EFA6FF /* AppDelegate.swift in Sources */,
 			);
@@ -271,6 +356,7 @@
 		};
 		841B9D6B1F592B3F00EFA6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41B5B467E6A0B1E880C8869F /* Pods-UdpStreamer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UL3G5ZE93D;
@@ -285,6 +371,7 @@
 		};
 		841B9D6C1F592B3F00EFA6FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CF202ABFF97EE121AD3ECB /* Pods-UdpStreamer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UL3G5ZE93D;
