@@ -8,7 +8,6 @@
 
 import CocoaAsyncSocket
 
-
 class UDPSocket: NSObject {
     static let manager = UDPSocket()
     var _socket: GCDAsyncUdpSocket?

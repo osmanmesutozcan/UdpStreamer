@@ -10,16 +10,15 @@ import Foundation
 import AVFoundation
 
 protocol AVStreamDelegate: NSObjectProtocol {
-
+    func didReceiveVideoBuffer(didReceive sampleBuffer: CMSampleBuffer) -> Void
 }
 
-class AVStream: NSObject {
+class AVStream: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     static let manager = AVStream()
     var _sessionQueue: DispatchQueue?
     var _session: AVCaptureSession?
-    var _videoDeviceInput: AVCaptureDeviceInput?
     var _device: AVCaptureDevice!
-    weak var delegate: AVStreamDelegate?
+    private weak var delegate: AVStreamDelegate?
 
     func prepare() {
         if let session = self._session {
@@ -30,9 +29,11 @@ class AVStream: NSObject {
         self._session = AVCaptureSession()
         self.prepareCamera()
 
-        self._sessionQueue = DispatchQueue(label: "me.UdpStreamer")
+        self._sessionQueue = DispatchQueue(label: "me.AVStream.AVSession")
         self._sessionQueue!.async() {
             var videoDeviceInput: AVCaptureDeviceInput!
+            var videoCaptureOutput: AVCaptureVideoDataOutput!
+
             do {
                 videoDeviceInput = try AVCaptureDeviceInput(device: self._device)
             } catch {
@@ -42,7 +43,20 @@ class AVStream: NSObject {
             if (self._session?.canAddInput(videoDeviceInput))! {
                 self._session?.addInput(videoDeviceInput)
             }
+
+            videoCaptureOutput = AVCaptureVideoDataOutput()
+            if (self._session?.canAddOutput(videoCaptureOutput))! {
+                self._session?.addOutput(videoCaptureOutput)
+                videoCaptureOutput.setSampleBufferDelegate(self, queue: self._sessionQueue)
+            }
         }
+    }
+
+    func setDelegate(delegate: AVStreamDelegate?) {
+        if (self.delegate) != nil {
+            self.delegate = nil
+        }
+        self.delegate = delegate
     }
 
     func start() {
@@ -65,16 +79,14 @@ class AVStream: NSObject {
         }
     }
 
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        self.delegate?.didReceiveVideoBuffer(didReceive: sampleBuffer)
+    }
+
     private func prepareCamera() {
-        self._session?.sessionPreset = AVCaptureSession.Preset.hd1920x1080
+        self._session?.sessionPreset = AVCaptureSession.Preset.vga640x480
 
         let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         self._device = session.devices.first
-    }
-}
-
-extension AVStream: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        NSLog(">>> Got Buffer.")
     }
 }
